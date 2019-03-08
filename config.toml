@@ -1,2 +1,6 @@
 title = "Interactive Notebook, Static Site"
 theme = "ananke"
+
+[params]
+  show_reading_time = true
+  custom_css = ["css/notebook.css"]

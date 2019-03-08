@@ -11,14 +11,14 @@ for notebook_file in glob.glob("content/posts/*.ipynb"):
         notebook_json = json.load(f)
 
         pattern = re.compile("ipynb", re.IGNORECASE)
-        title = pattern.sub("", os.path.basename(f.name))
+        title = pattern.sub("", os.path.basename(f.name)).replace(".", " ")
         date = time.strftime(
             "%Y-%m-%dT%H:%M:%S+00:00",
             time.gmtime(
                 os.path.getmtime(notebook_file)
             )
         )
-        description = " ".join(notebook_json["cells"][0]["source"])
+        description = " ".join(notebook_json["cells"][0]["source"]).replace("\n", "")
         f.close()
 
     # Make template
