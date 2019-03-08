@@ -18,7 +18,7 @@ for notebook_file in glob.glob("content/posts/*.ipynb"):
                 os.path.getmtime(notebook_file)
             )
         )
-        description = "/n".join(notebook_json["cells"][0]["source"])
+        description = " ".join(notebook_json["cells"][0]["source"])
         f.close()
 
     # Make template
