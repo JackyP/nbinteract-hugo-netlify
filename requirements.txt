@@ -1,1 +1,1 @@
-nbinteract-0.2.4
+nbinteract==0.2.4
